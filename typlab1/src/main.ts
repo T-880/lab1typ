@@ -42,4 +42,14 @@ function renderCourses(): void {
   });
 }
 
+function removeCourse(code: string): void {
+  courses = courses.filter(c => c.code !== code);
+  saveCourses();
+  renderCourses();
+}
+
+function saveCourses(): void {
+  localStorage.setItem("courses", JSON.stringify(courses));
+}
+
 renderCourses();
