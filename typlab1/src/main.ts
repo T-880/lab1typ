@@ -11,3 +11,10 @@ if (saved) {
 } else {
   courses = initialCourses;
 }
+
+const form = document.querySelector<HTMLFormElement>("#courseForm")!;
+const codeInput = document.querySelector<HTMLInputElement>("#code")!;
+const nameInput = document.querySelector<HTMLInputElement>("#name")!;
+const progressionInput = document.querySelector<HTMLSelectElement>("#progression")!;
+const syllabusInput = document.querySelector<HTMLInputElement>("#syllabus")!;
+const list = document.querySelector<HTMLDivElement>("#courseList")!;
