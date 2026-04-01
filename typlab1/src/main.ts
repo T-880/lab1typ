@@ -42,6 +42,27 @@ function renderCourses(): void {
   });
 }
 
+form.addEventListener("submit", (e: SubmitEvent) => {
+  e.preventDefault();
+
+  const newCourse: CourseInfo = {
+    code: codeInput.value,
+    name: nameInput.value,
+    progression: progressionInput.value as "A" | "B" | "C",
+    syllabus: syllabusInput.value
+  };
+
+  if (courses.some(c => c.code === newCourse.code)) {
+    alert("Kurskod finns redan!");
+    return;
+  }
+
+  courses.push(newCourse);
+  saveCourses();
+  renderCourses();
+  form.reset();
+});
+
 function removeCourse(code: string): void {
   courses = courses.filter(c => c.code !== code);
   saveCourses();
