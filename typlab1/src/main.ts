@@ -45,10 +45,17 @@ function renderCourses(): void {
 form.addEventListener("submit", (e: SubmitEvent) => {
   e.preventDefault();
 
+  const prog = progressionInput.value;
+
+  if (prog !== "A" && prog !== "B" && prog !== "C") {
+    alert("Ogiltig progression!");
+    return;
+  }
+  
   const newCourse: CourseInfo = {
     code: codeInput.value,
     name: nameInput.value,
-    progression: progressionInput.value as "A" | "B" | "C",
+    progression: prog,
     syllabus: syllabusInput.value
   };
 
