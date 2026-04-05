@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/lab1typ/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kursplaner</title>
+  <script type="module" crossorigin src="/lab1typ/assets/index-U0mKlty8.js"></script>
+  <link rel="stylesheet" crossorigin href="/lab1typ/assets/index-Bnxu0sVd.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Kurslista</h1>
+
+    <form id="courseForm">
+      <input type="text" id="code" placeholder="Kurskod" required />
+      <input type="text" id="name" placeholder="Kursnamn" required />
+      <select id="progression" required>
+        <option value="">Välj progression</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+      <input type="url" id="syllabus" placeholder="Länk till kursplan" required />
+      <button type="submit">Lägg till kurs</button>
+    </form>
+
+    <div id="courseList"></div>
+
+  </div>
+</body>
+
+</html>
